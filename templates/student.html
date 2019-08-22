@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="student">
+    <h1>VIBRATION MONITORING FORM</h1>
+    <body>
+      <form action = "{{ url_for('addrec') }}" method = "POST">
+		 
+         Tag<br>
+         <input type = "text" name = "tag" /></br><br></br>
+         
+         NDE-V-VEL<br>
+         <input type = "text" name = "nde_v_vel" /><br>
+         
+         NDE-H-VEL<br>
+         <input type = "text" name = "nde_h_vel" /><br>
+         
+         NDE-H-ENV<br>
+         <input type = "text" name = "nde_h_env" /><br>
+		 
+		 NDE-H-ACC<br>
+         <input type = "text" name = "nde_h_acc" /><br>
+		 
+		 DE-V-VEL<br>
+         <input type = "text" name = "de_v_vel" /><br>
+		 
+		 DE-H-VEL<br>
+         <input type = "text" name = "de_h_vel" /><br>
+		 
+		 DE-H-ENV<br>
+         <input type = "text" name = "de_h_env" /><br>
+		 
+		 DE-H-ACC<br>
+         <input type = "text" name = "de_h_acc" /><br>
+		 
+		 Rekomendasi<br>
+         <textarea name = "rekom" ></textarea><br>
+		 
+		 <br></br>
+         <input type = "submit" value = "submit" /><br>
+      </form>
+   </body>
+  </div>
+{% endblock %}

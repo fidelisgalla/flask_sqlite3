@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="list">
+   <body>
+      <table border = 1>
+         <thead>
+			<td>Date</td>
+            <td>Tag</td>
+            <td>NDE-V-VEL</td>
+            <td>NDE-H-VEL</td>
+            <td>NDE-H-ENV</td>
+			<td>NDE-H-ACC</td>
+			<td>DE-V-VEL</td>
+            <td>DE-H-VEL</td>
+            <td>DE-H-ENV</td>
+			<td>DE-H-ACC</td>
+			<td>Rekomendasi</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["date"]}}</td>
+			   <td>{{row["tag"]}}</td>
+               <td>{{row["NDE_V_VEL"]}}</td>
+               <td>{{row["NDE_H_VEL"]}}</td>
+               <td>{{row['NDE_H_ENV']}}</td>
+			   <td>{{row['NDE_H_ACC']}}</td>
+			   <td>{{row['DE_V_VEL']}}</td>
+			   <td>{{row['DE_H_VEL']}}</td>
+			   <td>{{row['DE_H_ENV']}}</td>
+			   <td>{{row['DE_H_ACC']}}</td>
+			   <td>{{row['REKOMENDASI']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/">Go back to home page</a>
+   </body>
+</div>
+{% endblock %}
