@@ -7,13 +7,18 @@ Created on Wed Jun 12 15:04:07 2019
 from flask import Flask, render_template, request
 import sqlite3 as sql
 from datetime import datetime
+import pandas as pd
+from matplotlib import pyplot as plt
+import io
+import re
+import base64
 
 app = Flask(__name__)
 
 def pie_chart():
     con = sql.connect('database_vib3.db')
     df = pd.read_sql_query('SELECT * FROM MOTORVIB ORDER BY DATETIME(date) DESC LIMIT 80',con)
-    tags = ['220-PM-1A','220-PM-1B','220-PM-2A','220-PM-2B']
+    tags = ['220-PM-1A','220-PM-1B','220-PM-2A','220-PM-2B','220-PM-3A']
     series_list = []
     for tag in tags:
         df1 = df[df['tag']==tag].iloc[0]
